@@ -1,4 +1,5 @@
 //define html variables
+var userDisplay = document.getElementById("userDisplay")
 var computerDisplay = document.getElementById("computerDisplay")
 var resultDisplay = document.getElementById("resultDisplay")
 
@@ -28,8 +29,9 @@ function computerChoose(x){
 //user chooses, causing computer to choose
 function userChoose(choice){
 	user = choice;
+	userDisplay.innerHTML = "You: <b>"+user.choice+"</b>";
 	computerChoose(choices);
-	computerDisplay.innerHTML = "Computer chose <b>"+computer.choice+"</b>";
+	computerDisplay.innerHTML = "Computer: <b>"+computer.choice+"</b>";
 	if(user.choice == computer.choice){
 		resultDisplay.innerHTML = "Tie";
 	} else if (user.beats == computer.choice) {
